@@ -1,23 +1,17 @@
-# universalis_notebooks
-Uses various data to query the FFXIV Universalis API to make gil easier.
+# Tanuki is under Development, join discord for information or to contribute.
 
-* Just hit run all in the notebook file and scroll to the end for your results. You'll need something to edit and run jupyter notebook cells.
+[Join the Tanuki dev discord server!](https://discord.gg/WauSVWzpZ3)
 
-## timed_nodes.ipynb
-This takes the unspoiled (timed) gathering nodes in Eorzea and prints them into a formatted list in CSV, then it calculates the current time in Eorzea. With the list of nodes now starting at the current time in Eorzea, we do a request to Universalis' market API in a world (such as Seraph in Dynamis) to get the marketboard data for our server.
+In the discord, we can slot you onto a team to craft/gather, or help you start your own crafting projects. We are here to make you Gil.
 
-* I have this set to Seraph for now in my use case, change this to your own in the notebook.
+## NOTICE
 
-* There are two different cells, one with and one without rarefied items. The final CSV has no rarefied items in it.
+We uphold strict ethical standards when it comes to working with the Tanuki platform, people who use RMT **at all** (real-money trading) or knowledgeably profiting off the work of bots will be shut off the platform, and reported to Yoshi P. For example, laundering your (unethically-obtained) gil through the market board between characters & accounts, is strictly prohibited. You may move assets between characters and accounts, but not if the source is knowledgeably from botted work.
 
-* I currently have it set to only items up to Shadowbringers due to my current game progression, you need to set this for yourself by replacing the raw text file "unpsoiled nodes" with the appropriate tables deleted from:
+## NOTEBOOKS
 
-https://ffxiv.consolegameswiki.com/mediawiki/index.php?title=Unspoiled_Nodes&action=edit
-
-1. First cell cleans the raw output of the webpage above, which is turned into "cleaned_nodes.csv"
-
-2. Second cell takes all the "cleaned_nodes" and gets their nicely formatted IDs with item data using "item_ids.json", making "final_nodes_with_ids.csv"
-
-3. Third cell calculates the time and sorts the "final_nodes_with_ids" by their active/approaching spawn time in eorzea.
-
-4. 
+* item_notebook (Django) -> compiles crafting & gathering recipes, gathering nodes, and interacts with the real game data obtained from XIVAPI. This is similar to teamcraft lists in functionality.
+* project-notebook (Deno/Oak) -> manages project artifacts such as holds, contributions, members, and all related data after the item service does its job.
+* market_notebook (Django) -> TBA, queries Universalis market board API and generates insight into *what to craft* for these crafting projects.
+* experimental (???) -> TBA, experimental notebooks that don't fit in anywhere else.
+Please open an issue in the repository as bugs and errors arise, this is a solo dev team with some support from FFXIV community, and other people's great tools.
